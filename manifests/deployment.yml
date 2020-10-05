@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "cluster-a32e"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "cluster-a32e"
+  template:
+    metadata:
+      labels:
+        app: "cluster-a32e"
+    spec:
+      containers:
+        - name: "cluster-a32e"
+          image: "container12341.azurecr.io/cluster"
+          ports:
+          - containerPort: 80
